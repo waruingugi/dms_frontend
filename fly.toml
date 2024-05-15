@@ -1,3 +1,7 @@
+# fly.toml app configuration file generated for dms-frontend on 2024-05-15T13:56:25+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
 app = 'dms-frontend'
 primary_region = 'jnb'
@@ -35,9 +39,7 @@ kill_timeout = '10s'
     grace_period = '1s'
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
-  cpus = 2
+  size = 'shared-cpu-2x'
 
 [[statics]]
   guest_path = '/app/static'
