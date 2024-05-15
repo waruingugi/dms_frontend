@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    image: dms-frontend
+    networks:
+      - dms-frontend-network
+    container_name: dms-frontend-api
+    restart: always
+    volumes:
+      - .:/dms
+    ports:
+      - "8000:8000"
+
+networks:
+  dms-frontend-network:
+    name: dms-frontend-network

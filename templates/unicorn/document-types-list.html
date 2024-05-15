@@ -1,0 +1,40 @@
+<div class="card-body">
+    <div class="row">
+        <div class="text-md-end"><label class="form-label w-100">
+            <input unicorn:model="search" class="bg-light form-control border-0 small" type="text" placeholder="Search for document types..."></label>
+        </div>
+    </div>
+                        
+    <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+        <table class="table my-0" id="dataTable">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for obj in document_types %}
+                    <tr>
+                        <td>{{ obj.type }}</td>
+                        <td>{{ obj.description }}</td>
+                    </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2" class="fs-5 text-center bg-light"><em>Sorry, No data to show. </em></td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
